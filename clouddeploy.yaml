@@ -1,8 +1,8 @@
 steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', '.']
+    args: ['build', '-t', 'gcr.io/qwiklabs-gcp-01-f33d8e6cd932/myimage', '.']
 images:
-  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage'
+  - 'gcr.io/qwiklabs-gcp-01-f33d8e6cd932/myimage'
 options:
   logging: NONE 
