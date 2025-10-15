@@ -7,7 +7,9 @@ steps:
     - '-t'
     - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:$COMMIT_SHA'
     - '.' # Build context is the current directory
-
+logsBucket: 'gs://buildlogs-qwiklabs-gcp-04-4302a10f9e66'
+options:
+  logging: GCS_ONLY
 # 2. Push to Artifact Registry (This step is technically optional if using the 'images' field below)
 - id: "push"
   name: 'gcr.io/cloud-builders/docker'
