@@ -1,8 +1,8 @@
 steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/qwiklabs-gcp-01-f33d8e6cd932/myimage', '.']
+    args: ['build', '-t', 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:${TAG_NAME}', '.']
 images:
-  - 'gcr.io/qwiklabs-gcp-01-f33d8e6cd932/myimage'
+  - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:${TAG_NAME}'
 options:
   logging: NONE 
