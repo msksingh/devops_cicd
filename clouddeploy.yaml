@@ -4,5 +4,3 @@ steps:
     args: ['build', '-t', 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:${TAG_NAME}', '.']
 images:
   - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:${TAG_NAME}'
-options:
-  logging: NONE 
