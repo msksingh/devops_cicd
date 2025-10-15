@@ -18,6 +18,3 @@ steps:
 images:
 # Use the exact, full path of the image you built and tagged in the steps above.
 - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:$COMMIT_SHA'
-
-options:
-  logging: 'NONE' # Use quotes for the NONE value
