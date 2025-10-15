@@ -7,10 +7,8 @@ steps:
     - '-t'
     - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:$COMMIT_SHA'
     - '.' # Build context is the current directory
-logsBucket: 'gs://buildlogs-qwiklabs-gcp-04-4302a10f9e66'
-options:
-  logging: GCS_ONLY
-# 2. Push to Artifact Registry (This step is technically optional if using the 'images' field below)
+
+# 2. Push to Artifact Registry (This is a valid explicit push step)
 - id: "push"
   name: 'gcr.io/cloud-builders/docker'
   args:
@@ -18,5 +16,14 @@ options:
     - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:$COMMIT_SHA'
 
 images:
-# Use the exact, full path of the image you built and tagged in the steps above.
+# Images to be pushed to the registry
 - 'us-docker.pkg.dev/qwiklabs-gcp-04-4302a10f9e66/docker-registry/myimage:$COMMIT_SHA'
+
+# --- TOP-LEVEL CONFIGURATION FIELDS START HERE ---
+
+# MUST be a top-level field, aligned with 'steps' and 'images'.
+logsBucket: 'gs://buildlogs-qwiklabs-gcp-04-4302a10f9e66'
+
+# MUST be a top-level field, aligned with 'steps' and 'images'.
+options:
+  logging: GCS_ONLY
